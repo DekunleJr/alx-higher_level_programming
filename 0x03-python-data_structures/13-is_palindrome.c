@@ -6,7 +6,7 @@
  * @h_r: head of the second half
  * Return: no return
  */
-vod reverse(listint_t **h_r)
+void reverse(listint_t **h_r)
 {
 	listint_t *prv;
 	listint_t *crr;
@@ -78,7 +78,6 @@ int is_palindrome(listint_t **head)
 	slow = fast = prev_slow = *head;
 	middle = NULL;
 	isp = 1;
-
 
 	if (*head != NULL && (*head)->next != NULL)
 	{
