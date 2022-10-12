@@ -71,3 +71,4 @@ class Square:
             for pos in range(self.__size):
                 string += " " * self.__position[0] + "#" * self.__size + '\n'
         return string[:-1]
+
