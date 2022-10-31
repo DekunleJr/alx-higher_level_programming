@@ -232,4 +232,4 @@ class Base:
             turtle.forward(square.y)
             turtle.right(90)
 
-            turtle.getscreen()._root.mainloop()
+        turtle.getscreen()._root.mainloop()
