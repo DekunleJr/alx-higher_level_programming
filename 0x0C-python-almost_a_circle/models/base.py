@@ -59,13 +59,13 @@ class Base:
     def load_from_file(cls):
         filename = cls.__name__ + ".json"
         b = []
-        """try:"""
-        with open(filename, 'r') as f:
-            b = cls.from_json_string(f.read())
-        for i, e in enumerate(b):
-            b[i] = cls.create(**l[i])
-        """except:
-            pass"""
+        try:
+            with open(filename, 'r') as f:
+                b = cls.from_json_string(f.read())
+            for i, e in enumerate(b):
+                b[i] = cls.create(**l[i])
+        except:
+            pass
         return b
 
     @classmethod
