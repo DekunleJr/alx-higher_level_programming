@@ -57,7 +57,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        filename = cls.__name__ + ".json"
+        """filename = cls.__name__ + ".json"
         b = []
         try:
             with open(filename, 'r') as f:
@@ -66,7 +66,17 @@ class Base:
                 b[i] = cls.create(**l[i])
         except:
             pass
-        return b
+        return b"""
+        filename = cls.__name__ + ".json"
+        new_loader = []
+        list_dicts = []
+        if os.path.exists(filename):
+            with open(filename, 'r') as f:
+                s = f.read()
+                list_dicts = cls.from_json_string(s)
+                for d in list_dicts:
+                    new_loader.append(cls.create(**d))
+        return new_loader
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
